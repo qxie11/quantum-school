@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import Header from "@components/partials/Header/Header";
+import { Header } from "@components/partials";
 
 export default function Home() {
   return (

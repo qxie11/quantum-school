@@ -1,0 +1,14 @@
+@import "@styles/vars";
+
+.link {
+  &.active {
+    color: $white;
+    background-color: $primary-color;
+    box-shadow: 4px 4px 8px rgb($primary-color, 0.5);
+    @apply rounded-3xl py-2 px-5;
+
+    &:hover {
+      @apply scale-x-110;
+    }
+  }
+}

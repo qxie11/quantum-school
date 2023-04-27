@@ -1,0 +1,22 @@
+@import "@styles/vars";
+
+.link {
+  @apply cursor-pointer font-medium;
+  transition: 0.3s ease;
+
+  &.underlineAnimation {
+    @apply relative;
+
+    &:before {
+      @apply content-[""] w-0 h-[3px] absolute bottom-[-5px] left-0 right-0;
+      background: $primary-color;
+      transition: width 0.4s;
+    }
+
+    &:hover {
+      &:before {
+        @apply w-full;
+      }
+    }
+  }
+}
