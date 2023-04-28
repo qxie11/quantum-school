@@ -1,5 +1,4 @@
 import cx from "classnames";
-import Emoji from "react-emojis";
 import { Container } from "@components/layout";
 import { Title } from "@components/typography";
 import { Section } from "@components/partials";
@@ -30,18 +29,9 @@ const IntroSection = () => {
         <Title className={cx("text-6xl", styles.title)}>
           Quantum School: Обучение web-разработке.
           <br />
-          <span>
-            <Emoji emoji="graduation-cap" />
-            Учись.
-          </span>
-          <span>
-            <Emoji emoji="laptop-computer" />
-            Работай.
-          </span>
-          <span>
-            <Emoji emoji="money-with-wings" />
-            Зарабатывай.
-          </span>
+          <span>🎓 Учись.</span>
+          <span>🖥️ Работай.</span>
+          <span>💸 Зарабатывай.</span>
         </Title>
       </Container>
     </Section>
