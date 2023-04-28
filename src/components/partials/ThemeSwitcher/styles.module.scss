@@ -1,0 +1,35 @@
+@import "@styles/vars";
+
+.toggle_mode_btn {
+  background: transparent;
+  border: none;
+}
+
+.svg {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+
+  &:hover {
+    path {
+      fill: $primary-color;
+    }
+  }
+}
+
+.moon,
+.sun {
+  transition: 0.5s ease;
+}
+
+.moon {
+  &:hover {
+    transform: rotate(40deg);
+  }
+}
+
+.sun {
+  &:hover {
+    transform: rotate(360deg);
+  }
+}

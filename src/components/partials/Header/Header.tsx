@@ -2,7 +2,7 @@ import { useRef } from "react";
 import cx from "classnames";
 import { useWindowScrollPosition } from "rooks";
 import { Container } from "@components/layout";
-import { Nav } from "@components/partials";
+import { Logo, Nav, ThemeSwitcher } from "@components/partials";
 
 import styles from "./styles.module.scss";
 
@@ -20,7 +20,11 @@ const Header = () => {
       })}
     >
       <Container>
-        <Nav />
+        <div className="flex items-center justify-between gap-10">
+          <Logo />
+          <Nav />
+          <ThemeSwitcher />
+        </div>
       </Container>
     </header>
   );
