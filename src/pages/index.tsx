@@ -11,7 +11,6 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <Button>hello</Button>
         <IntroSection />
       </main>
     </>
