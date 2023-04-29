@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Button } from "antd";
 import { Header } from "@components/partials";
 import { IntroSection } from "@components/sections/home";
 
