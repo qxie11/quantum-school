@@ -3,10 +3,17 @@
 .header {
   background-color: rgba($white, 0.3);
   backdrop-filter: saturate(180%) blur(24px);
-  transition: all 0.3s ease;
-}
 
-.headerFixed {
-  @apply fixed top-0 right-0 left-0 z-30;
-  box-shadow: 0px 7px 16px -10px rgba(34, 60, 80, 0.2);
+  &.headerDark {
+    background-color: $dark-theme-color;
+  }
+
+  &.headerDarkTransparent {
+    background-color: rgba($dark-theme-color, 0.3);
+  }
+
+  &.headerFixed {
+    @apply fixed top-0 right-0 left-0 z-30;
+    box-shadow: 0px 7px 16px -10px rgba(34, 60, 80, 0.2);
+  }
 }

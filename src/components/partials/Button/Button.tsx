@@ -2,6 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { Button as AntdButton } from "antd";
 import { ButtonProps } from "antd/lib/button";
+import useTheme from "@hooks/useTheme";
 
 import styles from "./styles.module.scss";
 
@@ -17,6 +18,7 @@ const Button: React.FC<Props> = ({
   type = "primary",
   ...rest
 }) => {
+  const { isDarkTheme } = useTheme();
   return (
     <AntdButton
       {...rest}
@@ -25,6 +27,7 @@ const Button: React.FC<Props> = ({
         {
           [styles.primary]: type === "primary",
           [styles.ghost]: type === "ghost",
+          "text-white": type === "ghost" && isDarkTheme,
         },
         className
       )}

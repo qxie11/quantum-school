@@ -3,10 +3,12 @@ import cx from "classnames";
 import { useWindowScrollPosition } from "rooks";
 import { Container } from "@components/layout";
 import { Logo, Nav, ThemeSwitcher } from "@components/partials";
+import useTheme from "@hooks/useTheme";
 
 import styles from "./styles.module.scss";
 
 const Header = () => {
+  const { isDarkTheme } = useTheme();
   const headerRef = useRef<HTMLElement>(null);
   const { scrollY } = useWindowScrollPosition();
   const headerHeight = (headerRef.current as HTMLElement)?.offsetHeight;
@@ -15,8 +17,10 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className={cx("py-5", styles.header, {
+      className={cx(styles.header, "py-5", {
         [styles.headerFixed]: isHeaderFixed,
+        [styles.headerDark]: isDarkTheme && !isHeaderFixed,
+        [styles.headerDarkTransparent]: isDarkTheme && isHeaderFixed,
       })}
     >
       <Container>

@@ -9,12 +9,6 @@
   width: 27px;
   height: 27px;
   cursor: pointer;
-
-  &:hover {
-    path {
-      fill: $primary-color;
-    }
-  }
 }
 
 .moon,
@@ -24,6 +18,9 @@
 
 .moon {
   &:hover {
+    path {
+      fill: $primary-color;
+    }
     transform: rotate(40deg);
   }
 }

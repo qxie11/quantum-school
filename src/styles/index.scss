@@ -3,3 +3,8 @@
 @tailwind utilities;
 @import "vars";
 @import "base";
+@import "global";
+
+body {
+  height: 400vh !important;
+}

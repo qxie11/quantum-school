@@ -9,7 +9,7 @@
   color: $white;
   font-size: 1.2rem;
   font-weight: 500;
-  box-shadow: 0 2px 10px 0 #c8c8c8;
+  box-shadow: 0 2px 10px 0 $iron;
   transition: box-shadow 0.25s, background-color 0.1s;
   border: 2px solid transparent;
 
@@ -19,6 +19,7 @@
 
     &:hover {
       border-color: $primary-color;
+      box-shadow: 0 2px 28px 0 $iron;
     }
   }
 
@@ -27,7 +28,7 @@
       background-color: $primary-color;
       filter: brightness(120%);
       color: $white;
-      box-shadow: 0 2px 28px 0 #d4d7dc;
+      box-shadow: 0 2px 28px 0 $iron;
     }
   }
 

@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from "react";
 import cx from "classnames";
+import useTheme from "@hooks/useTheme";
 import IBgGradient from "@interfaces/IBgGradient";
 import { BgGradient } from "@components/partials";
 
@@ -14,11 +15,14 @@ const Section: React.FC<Props> = ({
   gradient,
   ...rest
 }) => {
+  const { isDarkTheme } = useTheme();
+
   return (
     <section
       className={cx(
         {
           relative: gradient,
+          "bg-dark": isDarkTheme,
         },
         "py-40",
         className

@@ -1,6 +1,7 @@
 import Link, { LinkProps } from "next/link";
 import React, { ForwardedRef, HTMLAttributes } from "react";
 import cx from "classnames";
+import useTheme from "@hooks/useTheme";
 
 // Styles
 import styles from "./styles.module.scss";
@@ -19,8 +20,11 @@ const Anchor: React.FC<Props> = React.forwardRef(
     { children, className, external, underlineAnimation = true, href, ...rest },
     ref
   ) => {
+    const { isDarkTheme } = useTheme();
     const classNames = cx(styles.link, className, {
       [styles.underlineAnimation]: underlineAnimation,
+      "color-light": isDarkTheme,
+      "hover:text-white": isDarkTheme,
     });
 
     if (external) {
