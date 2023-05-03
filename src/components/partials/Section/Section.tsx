@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import cx from "classnames";
 import useTheme from "@hooks/useTheme";
-import IBgGradient from "@interfaces/IBgGradient";
+import IBgGradient from "@models/IBgGradient";
 import { BgGradient } from "@components/partials";
 
 interface Props extends HTMLAttributes<HTMLElement> {

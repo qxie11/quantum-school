@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import IBgGradient from "@interfaces/IBgGradient";
+import IBgGradient from "@models/IBgGradient";
 
 import styles from "./styles.module.scss";
 

@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLParagraphElement> {
 }
 
 const Text: React.FC<Props> = forwardRef(
-  ({ children, className, tagName = "P", ...rest }, ref) => {
+  ({ children, className, tagName = "p", ...rest }, ref) => {
     const { isDarkTheme } = useTheme();
     const Tag = tagName as any;
 

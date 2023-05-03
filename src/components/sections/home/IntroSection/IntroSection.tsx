@@ -24,7 +24,7 @@ const IntroSection = () => {
           <span>🖥️ Работай.</span>
           <span>💸 Зарабатывай.</span>
         </Title>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 flex-wrap">
           <Button>🚀 Начать</Button>
           <Text className="max-w-[10rem] mb-0">
             Образовательная платформа твоего будущего
