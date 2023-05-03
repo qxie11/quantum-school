@@ -13,21 +13,21 @@
   transition: box-shadow 0.25s, background-color 0.1s;
   border: 2px solid transparent;
 
+  &.primary {
+    &:hover {
+      background-color: $primary-color;
+      filter: brightness(120%);
+      color: $white;
+      box-shadow: 0 2px 28px 0 $iron;
+    }
+  }
+
   &.ghost {
     background-color: transparent;
     color: inherit;
 
     &:hover {
       border-color: $primary-color;
-      box-shadow: 0 2px 28px 0 $iron;
-    }
-  }
-
-  &.primary {
-    &:hover {
-      background-color: $primary-color;
-      filter: brightness(120%);
-      color: $white;
       box-shadow: 0 2px 28px 0 $iron;
     }
   }

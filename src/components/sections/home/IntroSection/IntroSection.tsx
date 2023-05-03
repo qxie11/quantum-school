@@ -25,7 +25,7 @@ const IntroSection = () => {
           <span>💸 Зарабатывай.</span>
         </Title>
         <div className="flex gap-10">
-          <Button type="ghost">🚀 Начать</Button>
+          <Button>🚀 Начать</Button>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
             amet.s

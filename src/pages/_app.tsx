@@ -1,10 +1,10 @@
-import "antd/dist/antd";
-import "@styles/index.scss";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import NextNprogress from "nextjs-progressbar";
 import type { AppProps } from "next/app";
 import { store } from "@store/store";
+import "antd/dist/antd";
+import "@styles/index.scss";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

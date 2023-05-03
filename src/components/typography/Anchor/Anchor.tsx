@@ -23,7 +23,7 @@ const Anchor: React.FC<Props> = React.forwardRef(
     const { isDarkTheme } = useTheme();
     const classNames = cx(styles.link, className, {
       [styles.underlineAnimation]: underlineAnimation,
-      "color-light": isDarkTheme,
+      "text-white": isDarkTheme,
       "hover:text-white": isDarkTheme,
     });
 
