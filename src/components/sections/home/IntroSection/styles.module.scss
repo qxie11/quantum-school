@@ -1,5 +1,9 @@
-.title {
-  span {
-    @apply text-3xl;
+@import "@styles/vars";
+
+.span {
+  @apply text-3xl mr-[1rem];
+
+  @media (max-width: $sm) {
+    @apply block mt-5;
   }
 }

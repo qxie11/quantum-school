@@ -1,5 +1,5 @@
 enum Breakpoints {
-  XL = 1200,
+  XLG = 1200,
   LG = 992,
   MD = 768,
   SM = 576,
