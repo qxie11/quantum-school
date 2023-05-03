@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 
 interface Props extends IBgGradient {
   className?: string;
+  animation?: boolean;
 }
 
 const BgGradient: React.FC<Props> = ({
@@ -15,10 +16,13 @@ const BgGradient: React.FC<Props> = ({
   left,
   color,
   className,
+  animation = false,
 }) => (
   <div
     style={{ width, height, top, left, background: color }}
-    className={cx(styles.bg, className)}
+    className={cx(styles.bg, className, {
+      [styles.animation]: animation,
+    })}
   ></div>
 );
 

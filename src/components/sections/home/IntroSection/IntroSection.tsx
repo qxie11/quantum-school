@@ -1,6 +1,6 @@
 import cx from "classnames";
 import { Container } from "@components/layout";
-import { Title } from "@components/typography";
+import { Title, Text } from "@components/typography";
 import { Button, Section } from "@components/partials";
 import useTheme from "@hooks/useTheme";
 import { GRADIENTS } from "./constants";
@@ -24,12 +24,11 @@ const IntroSection = () => {
           <span>🖥️ Работай.</span>
           <span>💸 Зарабатывай.</span>
         </Title>
-        <div className="flex gap-10">
+        <div className="flex items-center gap-10">
           <Button>🚀 Начать</Button>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-            amet.s
-          </p>
+          <Text className="max-w-[10rem] mb-0">
+            Образовательная платформа твоего будущего
+          </Text>
         </div>
       </Container>
     </Section>
