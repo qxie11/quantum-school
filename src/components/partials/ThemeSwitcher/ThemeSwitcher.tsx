@@ -2,11 +2,18 @@ import cx from "classnames";
 import useTheme from "@hooks/useTheme";
 import styles from "./styles.module.scss";
 
-const ThemeSwitcher = () => {
+interface Props {
+  className?: string;
+}
+
+const ThemeSwitcher: React.FC<Props> = ({ className }) => {
   const { isDarkTheme, switchTheme } = useTheme();
 
   return (
-    <button className={styles.toggle_mode_btn} onClick={() => switchTheme()}>
+    <button
+      className={cx(styles.toggle_mode_btn, className)}
+      onClick={() => switchTheme()}
+    >
       {!isDarkTheme ? (
         <svg
           className={cx(styles.svg, styles.moon)}

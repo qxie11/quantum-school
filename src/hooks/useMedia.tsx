@@ -15,6 +15,10 @@ const useMedia = () => {
     isSM:
       innerWindowWidth >= Breakpoints.SM && innerWindowWidth < Breakpoints.MD,
     isXSM: innerWindowWidth < Breakpoints.SM,
+    lessThanXLG: innerWindowWidth < Breakpoints.XLG,
+    lessThanLG: innerWindowWidth < Breakpoints.LG,
+    lessThanMD: innerWindowWidth < Breakpoints.MD,
+    lessThanSM: innerWindowWidth < Breakpoints.SM,
   };
 };
 
