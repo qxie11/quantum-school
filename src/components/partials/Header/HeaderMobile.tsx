@@ -23,9 +23,9 @@ const HeaderMobile = () => {
           styles.headerMobile,
           "fixed top-0 right-0 bottom-0 left-[15%] z-40",
           "rounded-s-[25px] backdrop-blur-3xl flex flex-col",
-          "items-center gap-5 pt-[100px] pb-[40px] translate-x-[105%]",
+          "items-center gap-5 pt-[100px] pb-[40px]",
           {
-            "translate-x-0": isActive,
+            [styles.active]: isActive,
           }
         )}
       >

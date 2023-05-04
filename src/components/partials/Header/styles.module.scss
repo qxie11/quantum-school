@@ -11,7 +11,12 @@
 
 .headerMobile {
   box-shadow: -8px 3px 22px -3px rgba($black, 0.19);
+  transform: translateX(105%);
   transition: transform 0.5s ease;
+
+  &.active {
+    transform: translateX(0);
+  }
 }
 
 .headerDark {
