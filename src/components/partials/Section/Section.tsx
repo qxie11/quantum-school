@@ -4,6 +4,8 @@ import useTheme from "@hooks/useTheme";
 import IBgGradient from "@models/IBgGradient";
 import { BgGradient } from "@components/partials";
 
+import styles from "./styles.module.scss";
+
 interface Props extends HTMLAttributes<HTMLElement> {
   className?: string;
   gradient?: IBgGradient[];
@@ -20,11 +22,11 @@ const Section: React.FC<Props> = ({
   return (
     <section
       className={cx(
+        styles.section,
         {
           relative: gradient,
           "bg-dark": isDarkTheme,
         },
-        "py-40",
         className
       )}
       {...rest}

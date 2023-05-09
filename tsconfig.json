@@ -24,7 +24,8 @@
       "@store/*": ["./store/*"],
       "@hooks/*": ["./hooks/*"],
       "@models/*": ["./models/*"],
-      "@enums/*": ["./enums/*"]
+      "@enums/*": ["./enums/*"],
+      "@api/*": ["./api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -5,6 +5,6 @@ export const NAV_LINKS = [
   },
   {
     text: "Курсы",
-    href: "/courses",
+    href: "#courses",
   },
 ];

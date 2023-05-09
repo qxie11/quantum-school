@@ -1,17 +1,33 @@
 import Head from "next/head";
 import { Header } from "@components/partials";
-import { IntroSection } from "@components/sections/home";
+import { IntroSection, CoursesSection } from "@components/sections/home";
+import IGetCoursesResponse from "@models/responses/IGetCoursesResponse";
 
-export default function Home() {
+interface Props {
+  courses: IGetCoursesResponse;
+}
+
+export default function Home({ courses }: Props) {
   return (
     <>
       <Head>
-        <title>Онлайн курсы: обучение web-разработке</title>
+        <title>Quantum School: Обучение web-разработке.</title>
       </Head>
       <Header />
       <main>
         <IntroSection />
+        <CoursesSection courses={courses} />
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const coursesSectionProps = await CoursesSection.getServerSideProps();
+
+  return {
+    props: {
+      ...coursesSectionProps.props,
+    },
+  };
 }

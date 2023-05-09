@@ -1,24 +1,21 @@
-import { useWindowSize } from "rooks";
+import useWindowSize from "./useWindowSize";
 import Breakpoints from "@enums/Breakpoints";
 
 const useMedia = () => {
-  const { innerWidth } = useWindowSize();
+  const { width } = useWindowSize();
 
-  const innerWindowWidth = innerWidth as number;
+  const innerWidth = width as number;
 
   return {
-    isXLG: innerWindowWidth >= Breakpoints.XLG,
-    isLG:
-      innerWindowWidth >= Breakpoints.LG && innerWindowWidth < Breakpoints.XLG,
-    isMD:
-      innerWindowWidth >= Breakpoints.MD && innerWindowWidth < Breakpoints.LG,
-    isSM:
-      innerWindowWidth >= Breakpoints.SM && innerWindowWidth < Breakpoints.MD,
-    isXSM: innerWindowWidth < Breakpoints.SM,
-    lessThanXLG: innerWindowWidth < Breakpoints.XLG,
-    lessThanLG: innerWindowWidth < Breakpoints.LG,
-    lessThanMD: innerWindowWidth < Breakpoints.MD,
-    lessThanSM: innerWindowWidth < Breakpoints.SM,
+    isXLG: innerWidth >= Breakpoints.XLG,
+    isLG: innerWidth >= Breakpoints.LG && innerWidth < Breakpoints.XLG,
+    isMD: innerWidth >= Breakpoints.MD && innerWidth < Breakpoints.LG,
+    isSM: innerWidth >= Breakpoints.SM && innerWidth < Breakpoints.MD,
+    isXSM: innerWidth < Breakpoints.SM,
+    lessThanXLG: innerWidth < Breakpoints.XLG,
+    lessThanLG: innerWidth < Breakpoints.LG,
+    lessThanMD: innerWidth < Breakpoints.MD,
+    lessThanSM: innerWidth < Breakpoints.SM,
   };
 };
 

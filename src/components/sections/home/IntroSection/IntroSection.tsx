@@ -14,12 +14,13 @@ const IntroSection = () => {
 
   return (
     <Section
+      className="py-36"
       {...(isLightTheme && {
         gradient: GRADIENTS,
       })}
     >
       <Container>
-        <Title className={cx("text-6xl mb-14")}>
+        <Title size="large" className="mb-14">
           Quantum School: Обучение web-разработке.
           <br />
           <span

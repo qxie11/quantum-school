@@ -1,0 +1,24 @@
+@import "@styles/vars";
+
+.tabs {
+  :global {
+    .ant-tabs-tab {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  &.dark {
+    :global {
+      .ant-tabs-tab {
+        color: $primary-color;
+
+        &.ant-tabs-tab-active {
+          .ant-tabs-tab-btn {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
