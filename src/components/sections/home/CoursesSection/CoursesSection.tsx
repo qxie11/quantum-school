@@ -57,7 +57,7 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
             {course.tags.map((tag) => (
               <span
                 className={cx(
-                  "rounded-3xl py-1 px-5 text-white shadow-lg",
+                  "rounded-3xl py-1 px-5 text-white shadow-lg text-[0.7rem]",
                   styles.tag
                 )}
                 key={tag}
