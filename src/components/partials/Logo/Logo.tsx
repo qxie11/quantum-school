@@ -6,11 +6,11 @@ import LogoMini from "./LogoMini";
 // https://looka.com - logo generator
 
 const Logo = () => {
-  const { lessThanMD } = useMedia();
+  const { isMD } = useMedia();
 
   return (
     <Link href="/">
-      <a>{lessThanMD ? <LogoMini /> : <LogoFull />}</a>
+      <a>{isMD ? <LogoFull /> : <LogoMini />}</a>
     </Link>
   );
 };

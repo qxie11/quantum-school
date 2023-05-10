@@ -1,21 +1,25 @@
 import useWindowSize from "./useWindowSize";
 import Breakpoints from "@enums/Breakpoints";
 
-const useMedia = () => {
+interface IReturnValue {
+  isXLG: boolean;
+  isLG: boolean;
+  isMD: boolean;
+  isSM: boolean;
+  isXSM: boolean;
+}
+
+const useMedia = (): IReturnValue => {
   const { width } = useWindowSize();
 
   const innerWidth = width as number;
 
   return {
     isXLG: innerWidth >= Breakpoints.XLG,
-    isLG: innerWidth >= Breakpoints.LG && innerWidth < Breakpoints.XLG,
-    isMD: innerWidth >= Breakpoints.MD && innerWidth < Breakpoints.LG,
-    isSM: innerWidth >= Breakpoints.SM && innerWidth < Breakpoints.MD,
+    isLG: innerWidth >= Breakpoints.LG,
+    isMD: innerWidth >= Breakpoints.MD,
+    isSM: innerWidth >= Breakpoints.SM,
     isXSM: innerWidth < Breakpoints.SM,
-    lessThanXLG: innerWidth < Breakpoints.XLG,
-    lessThanLG: innerWidth < Breakpoints.LG,
-    lessThanMD: innerWidth < Breakpoints.MD,
-    lessThanSM: innerWidth < Breakpoints.SM,
   };
 };
 

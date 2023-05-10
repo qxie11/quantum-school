@@ -3,10 +3,10 @@ import HeaderDesktop from "./HeaderDesktop";
 // import HeaderMobile from "./HeaderMobile";
 
 const Header = () => {
-  const { lessThanSM } = useMedia();
+  const { isSM } = useMedia();
 
   const getHeader = () => {
-    if (lessThanSM) return <HeaderDesktop />;
+    if (isSM) return <HeaderDesktop />;
 
     return <HeaderDesktop />;
   };

@@ -16,7 +16,7 @@ interface Props {
 }
 
 const CoursesSection = ({ courses: { tags, courses } }: Props) => {
-  const { lessThanMD } = useMedia();
+  const { isMD } = useMedia();
 
   const tabsItems = ["Все", ...tags].map((tag) => ({
     label: tag,
@@ -80,7 +80,7 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
         <Title className="text-center mb-24">✍️ Курсы</Title>
         <Tabs
           className={styles.tabs}
-          tabPosition={lessThanMD ? "top" : "left"}
+          tabPosition={isMD ? "left" : "top"}
           items={tabsItems}
         />
       </Container>
