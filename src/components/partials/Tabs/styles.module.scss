@@ -12,6 +12,7 @@
     :global {
       .ant-tabs-tab {
         color: $primary-color;
+        -webkit-text-stroke: 0.3px $white;
 
         &.ant-tabs-tab-active {
           .ant-tabs-tab-btn {

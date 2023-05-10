@@ -25,7 +25,8 @@
       "@hooks/*": ["./hooks/*"],
       "@models/*": ["./models/*"],
       "@enums/*": ["./enums/*"],
-      "@api/*": ["./api/*"]
+      "@api/*": ["./api/*"],
+      "@assets/*": ["./assets/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
