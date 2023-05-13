@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import cx from "classnames";
 import { Container } from "@components/layout";
-import { Section, Tabs } from "@components/partials";
+import { Section, Tabs, Tags } from "@components/partials";
 import { Title } from "@components/typography";
 import CoursesApi from "@api/courses";
 import { filterCourses } from "./utils";
@@ -53,19 +53,7 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
           />
         </div>
         <div className="w-full">
-          <div className="flex gap-3 flex-wrap mb-3 justify-center sm:justify-start">
-            {course.tags.map((tag) => (
-              <span
-                className={cx(
-                  "rounded-3xl py-1 px-5 text-white shadow-lg text-[0.7rem]",
-                  styles.tag
-                )}
-                key={tag}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          <Tags tags={course.tags} />{" "}
           <Title className="text-center sm:text-start" size="small">
             {course.name}
           </Title>

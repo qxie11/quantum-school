@@ -1,9 +1,5 @@
 @import "@styles/vars";
 
-.tag {
-  background-color: $primary-color;
-}
-
 .see {
   transform: translateY(-50%) scale(0);
   transition: transform 0.3s ease;

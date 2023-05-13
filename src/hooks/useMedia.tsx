@@ -1,15 +1,7 @@
 import useWindowSize from "./useWindowSize";
 import Breakpoints from "@enums/Breakpoints";
 
-interface IReturnValue {
-  isXLG: boolean;
-  isLG: boolean;
-  isMD: boolean;
-  isSM: boolean;
-  isXSM: boolean;
-}
-
-const useMedia = (): IReturnValue => {
+const useMedia = () => {
   const { width } = useWindowSize();
 
   const innerWidth = width as number;
