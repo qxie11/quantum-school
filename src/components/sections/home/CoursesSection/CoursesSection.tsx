@@ -29,7 +29,7 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
         <Link href={`/course/${course.slug}`}>
           <a
             className={cx(
-              "absolute top-0 left-0 right-0 bottom-0 z-1",
+              "absolute top-0 left-0 right-0 bottom-0 z-[2]",
               styles.link
             )}
           ></a>
@@ -37,7 +37,7 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
         <span
           className={cx(
             "absolute w-14 h-14 top-1/2 right-0 text-3xl rounded-full",
-            "items-center justify-center z-[-1] md:flex hidden",
+            "items-center justify-center z-[1] md:flex hidden",
             styles.see
           )}
         >
