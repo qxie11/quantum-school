@@ -1,7 +1,13 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import { Header } from "@components/partials";
-import { IntroSection, CoursesSection } from "@components/sections/home";
+import { CoursesSection } from "@components/sections/home";
 import IGetCoursesResponse from "@models/responses/IGetCoursesResponse";
+
+const IntroSection = dynamic(
+  () => import("@components/sections/home/IntroSection/IntroSection"),
+  { ssr: false }
+);
 
 interface Props {
   courses: IGetCoursesResponse;

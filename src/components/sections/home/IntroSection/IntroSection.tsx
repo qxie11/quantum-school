@@ -1,4 +1,5 @@
 import cx from "classnames";
+import { isFirefox } from "react-device-detect";
 import { Container } from "@components/layout";
 import { Title, Text } from "@components/typography";
 import { Button, Section } from "@components/partials";
@@ -14,10 +15,13 @@ const IntroSection = () => {
 
   return (
     <Section
-      className="py-36"
-      {...(isLightTheme && {
-        gradient: GRADIENTS,
+      className={cx("py-36", {
+        [styles.bgGradient]: isFirefox && isLightTheme,
       })}
+      {...(!isFirefox &&
+        isLightTheme && {
+          gradient: GRADIENTS,
+        })}
     >
       <Container>
         <Title size="large" className="mb-14">
