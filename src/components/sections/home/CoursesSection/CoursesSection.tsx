@@ -15,13 +15,13 @@ interface Props {
   courses: IGetCoursesResponse;
 }
 
-const CoursesSection = ({ courses: { tags, courses } }: Props) => {
+const CoursesSection = ({ courses }: Props) => {
   const { isMD } = useMedia();
 
-  const tabsItems = ["Все", ...tags].map((tag) => ({
+  const tabsItems = (courses ? ["Все", ...courses.tags] : []).map((tag) => ({
     label: tag,
     key: tag,
-    children: filterCourses(courses, tag).map((course) => (
+    children: filterCourses(courses?.courses, tag).map((course) => (
       <div
         className="mb-12 flex gap-12 relative flex-col sm:flex-row items-center sm:items-start"
         key={course.name}
@@ -53,7 +53,7 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
           />
         </div>
         <div className="w-full">
-          <Tags tags={course.tags} />{" "}
+          <Tags tags={course?.tags} />{" "}
           <Title className="text-center sm:text-start" size="small">
             {course.name}
           </Title>
@@ -66,22 +66,32 @@ const CoursesSection = ({ courses: { tags, courses } }: Props) => {
     <Section id="courses" className="pt-16">
       <Container>
         <Title className="text-center mb-24">✍️ Курсы</Title>
-        <Tabs
-          className={styles.tabs}
-          tabPosition={isMD ? "left" : "top"}
-          items={tabsItems}
-        />
+        {courses ? (
+          <Tabs
+            className={styles.tabs}
+            tabPosition={isMD ? "left" : "top"}
+            items={tabsItems}
+          />
+        ) : (
+          "Network error while getting courses"
+        )}
       </Container>
     </Section>
   );
 };
 
 CoursesSection.getServerSideProps = async () => {
-  const courses = await CoursesApi.getCourses();
+  try {
+    const courses = await CoursesApi.getCourses();
 
-  return {
-    props: { courses: courses.data },
-  };
+    return {
+      props: { courses: courses.data },
+    };
+  } catch {
+    return {
+      props: { courses: null },
+    };
+  }
 };
 
 export default CoursesSection;
