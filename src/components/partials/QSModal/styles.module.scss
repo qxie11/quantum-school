@@ -1,0 +1,11 @@
+.wrapper {
+  :global {
+    .ant-modal-content {
+      @apply rounded-2xl;
+    }
+
+    .ant-modal-close-x {
+      @apply flex justify-center items-center;
+    }
+  }
+}
