@@ -1,5 +1,9 @@
 .wrapper {
   :global {
+    .ant-modal-body {
+      @apply p-12;
+    }
+
     .ant-modal-content {
       @apply rounded-2xl;
     }

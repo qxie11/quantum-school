@@ -54,7 +54,11 @@ const CoursesSection = ({ courses }: Props) => {
         </div>
         <div className="w-full">
           <Tags tags={course?.tags} />{" "}
-          <Title className="text-center sm:text-start" size="small">
+          <Title
+            variant="h3"
+            className="text-center sm:text-start"
+            size="small"
+          >
             {course.name}
           </Title>
         </div>
@@ -65,7 +69,9 @@ const CoursesSection = ({ courses }: Props) => {
   return (
     <Section id="courses" className="pt-16">
       <Container>
-        <Title className="text-center mb-24">✍️ Курсы</Title>
+        <Title variant="h2" className="text-center mb-24">
+          ✍️ Курсы
+        </Title>
         {courses ? (
           <Tabs
             className={styles.tabs}

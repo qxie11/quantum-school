@@ -9,17 +9,21 @@ interface Props extends HTMLAttributes<HTMLHeadingElement> {
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   ref?: ForwardedRef<HTMLHeadingElement>;
   size?: "large" | "medium" | "small";
+  color?: "dark" | "light";
 }
 
 const Title: React.FC<Props> = forwardRef(
-  ({ children, className, variant = "h1", size = "medium", ...rest }, ref) => {
+  (
+    { children, className, variant = "h1", size = "medium", color, ...rest },
+    ref
+  ) => {
     const { isDarkTheme } = useTheme();
     const TagName = variant;
 
     return (
       <TagName
         className={cx(styles.title, className, {
-          "color-light": isDarkTheme,
+          "color-light": color ? color === "light" : isDarkTheme,
           "text-6xl": size === "large",
           "text-4xl": size === "medium",
           "text-2xl": size === "small",

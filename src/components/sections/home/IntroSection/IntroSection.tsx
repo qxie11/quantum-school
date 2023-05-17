@@ -1,8 +1,10 @@
+import { useState } from "react";
 import cx from "classnames";
 import { isFirefox } from "react-device-detect";
 import { Container } from "@components/layout";
 import { Title, Text } from "@components/typography";
 import { Button, Section } from "@components/partials";
+import { LoginModal } from "@components/modal";
 import useTheme from "@hooks/useTheme";
 import useMedia from "@hooks/useMedia";
 import { GRADIENTS } from "./constants";
@@ -10,6 +12,7 @@ import { GRADIENTS } from "./constants";
 import styles from "./styles.module.scss";
 
 const IntroSection = () => {
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const { isLightTheme } = useTheme();
   const { isXSM } = useMedia();
 
@@ -38,12 +41,18 @@ const IntroSection = () => {
           <span className={styles.span}>💸 Зарабатывай.</span>
         </Title>
         <div className="flex items-center gap-10 flex-wrap">
-          <Button>🚀 Начать</Button>
+          <Button onClick={() => setIsLoginModalOpen(true)}>🚀 Начать</Button>
           <Text className="max-w-[10rem] mb-0">
             Образовательная платформа твоего будущего
           </Text>
         </div>
       </Container>
+      {isLoginModalOpen && (
+        <LoginModal
+          open={isLoginModalOpen}
+          onCancel={() => setIsLoginModalOpen(false)}
+        />
+      )}
     </Section>
   );
 };
