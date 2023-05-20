@@ -7,3 +7,5 @@ export { default as Section } from "./Section/Section";
 export { default as Button } from "./Button/Button";
 export { default as Tabs } from "./Tabs/Tabs";
 export { default as Tags } from "./Tags/Tags";
+export { default as Controller } from "./Controller/Controller";
+export { default as Input } from "./Input/Input";
