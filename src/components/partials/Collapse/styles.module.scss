@@ -1,0 +1,36 @@
+@import "@styles/vars";
+
+.collapse {
+  border: none;
+  background: transparent;
+
+  &.dark {
+    :global {
+      .ant-collapse-header,
+      .ant-collapse-content {
+        color: $white;
+      }
+    }
+  }
+
+  :global {
+    .ant-collapse-header {
+      @apply text-3xl font-medium;
+      padding: 2rem 0 !important;
+    }
+
+    .ant-collapse-expand-icon {
+      display: none;
+    }
+
+    .ant-collapse-content {
+      background: transparent;
+    }
+
+    .ant-collapse-item-active {
+      .ant-collapse-header {
+        color: $primary-color;
+      }
+    }
+  }
+}

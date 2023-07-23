@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { Header } from "@components/partials";
-import { CoursesSection } from "@components/sections/home";
+import { AdvantagesSection, CoursesSection } from "@components/sections/home";
 import IGetCoursesResponse from "@models/responses/IGetCoursesResponse";
 
 const IntroSection = dynamic(
@@ -23,6 +23,7 @@ export default function Home({ courses }: Props) {
       <main>
         <IntroSection />
         <CoursesSection courses={courses} />
+        <AdvantagesSection />
       </main>
     </>
   );
