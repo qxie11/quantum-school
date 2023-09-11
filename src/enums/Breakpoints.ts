@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 enum Breakpoints {
   XLG = 1200,
   LG = 992,

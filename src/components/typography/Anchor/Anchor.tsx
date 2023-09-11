@@ -35,10 +35,8 @@ const Anchor: React.FC<Props> = React.forwardRef(
       );
     } else {
       return (
-        <Link href={href} {...rest}>
-          <a className={classNames} ref={ref}>
-            {children}
-          </a>
+        <Link className={classNames} ref={ref} href={href} {...rest}>
+          {children}
         </Link>
       );
     }

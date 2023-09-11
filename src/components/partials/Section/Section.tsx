@@ -31,8 +31,8 @@ const Section: React.FC<Props> = ({
       )}
       {...rest}
     >
-      {gradient?.map((item) => (
-        <BgGradient key={item.color} {...item} />
+      {gradient?.map((item, i) => (
+        <BgGradient key={i} {...item} />
       ))}
       {children}
     </section>

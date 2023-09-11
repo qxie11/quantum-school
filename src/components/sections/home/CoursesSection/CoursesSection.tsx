@@ -26,14 +26,13 @@ const CoursesSection = ({ courses }: Props) => {
         className="mb-12 flex gap-12 relative flex-col sm:flex-row items-center sm:items-start"
         key={course.name}
       >
-        <Link href={`/course/${course.slug}`}>
-          <a
-            className={cx(
-              "absolute top-0 left-0 right-0 bottom-0 z-[2]",
-              styles.link
-            )}
-          ></a>
-        </Link>
+        <Link
+          className={cx(
+            "absolute top-0 left-0 right-0 bottom-0 z-[2]",
+            styles.link
+          )}
+          href={`/course/${course.slug}`}
+        ></Link>
         <span
           className={cx(
             "absolute w-14 h-14 top-1/2 right-0 text-3xl rounded-full",

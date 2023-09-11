@@ -10,7 +10,7 @@ const Logo = () => {
 
   return (
     <Link href="/">
-      <a>{isMD ? <LogoFull /> : <LogoMini />}</a>
+      {isMD ? <LogoFull /> : <LogoMini />}
     </Link>
   );
 };
