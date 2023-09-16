@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { Header } from "@components/partials";
+import { Layout } from "@components/layout";
 import {
   AdvantagesSection,
   ContactSection,
@@ -19,7 +20,7 @@ interface Props {
 
 export default function Home({ courses }: Props) {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Quantum School: Обучение web-разработке.</title>
       </Head>
@@ -30,7 +31,7 @@ export default function Home({ courses }: Props) {
         <AdvantagesSection />
         <ContactSection />
       </main>
-    </>
+    </Layout>
   );
 }
 
