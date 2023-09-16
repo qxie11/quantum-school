@@ -1,16 +1,16 @@
 import { useRef } from "react";
 import cx from "classnames";
-import { useWindowScrollPosition } from "rooks";
 import { Container } from "@components/layout";
 import { Logo, Nav, ThemeSwitcher } from "@components/partials";
 import useTheme from "@hooks/useTheme";
+import useScrollPosition from "@hooks/useScrollPosition";
 
 import styles from "./styles.module.scss";
 
 const HeaderDesktop = () => {
   const { isDarkTheme } = useTheme();
   const headerRef = useRef<HTMLElement>(null);
-  const { scrollY } = useWindowScrollPosition();
+  const { scrollY } = useScrollPosition();
   const headerHeight = (headerRef.current as HTMLElement)?.offsetHeight;
   const isHeaderFixed = scrollY > headerHeight;
 
