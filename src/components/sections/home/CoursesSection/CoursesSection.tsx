@@ -90,7 +90,7 @@ CoursesSection.getServerSideProps = async () => {
     const courses = await CoursesApi.getCourses();
 
     return {
-      props: { courses: courses.data },
+      props: { courses },
     };
   } catch {
     return {

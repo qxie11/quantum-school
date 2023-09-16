@@ -1,7 +1,11 @@
 import axios from "axios";
 
-axios.defaults.headers.post["Content-Type"] = "application/json";
-
-export const baseUrlInstance = axios.create({
+export const api = axios.create({
   baseURL: process.env.BASE_URL,
 });
+
+api.interceptors.response.use(
+  function (res) {
+    return res.data;
+  },
+);

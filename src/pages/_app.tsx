@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import NextNprogress from "nextjs-progressbar";
 import type { AppProps } from "next/app";
 import { store } from "@store/store";
-import "@api/_interceptors";
 import "antd/dist/antd";
 import "@styles/index.scss";
 

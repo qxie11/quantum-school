@@ -1,3 +1,4 @@
+'use client';
 import useWindowSize from "./useWindowSize";
 import Breakpoints from "@enums/Breakpoints";
 
