@@ -28,7 +28,7 @@ const HelpForm = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 relative">
       <Title variant="h2" size="small" color="dark" className="text-center">
         Ты в одном шаге от профессии
       </Title>
@@ -38,7 +38,7 @@ const HelpForm = () => {
           control={control as any}
           name="name"
           getInput={(field) => (
-            <Input type="name" placeholder="Имя" {...field} />
+            <Input type="name" placeholder="Будущий Разработчик" {...field} />
           )}
         />
         <Controller

@@ -1,4 +1,4 @@
-import { Section, HelpForm } from "@components/partials";
+import { Section, HelpForm, BgGradient } from "@components/partials";
 import { Container } from "@components/layout";
 import { Title, Text } from "@components/typography";
 
@@ -21,7 +21,25 @@ const ContactSection = () => {
               </Text>
             </div>
           </div>
-          <HelpForm />
+          <div className="relative">
+            <HelpForm />
+            <BgGradient
+              width="200px"
+              height="200px"
+              color="#bcffc8"
+              left="0"
+              top="0"
+              animation
+            />
+            <BgGradient
+              width="150px"
+              height="150px"
+              color="#a8bfff"
+              left="40%"
+              top="40%"
+              animation
+            />
+          </div>
         </div>
       </Container>
     </Section>
