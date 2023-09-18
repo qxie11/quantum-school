@@ -1,4 +1,5 @@
 import * as yup from "yup";
+import "yup-phone-lite";
 
 const helpFormSchema = yup.object().shape({
   name: yup
@@ -9,7 +10,7 @@ const helpFormSchema = yup.object().shape({
   phone: yup
     .string()
     .trim()
-    .matches(/^\+[1-9]\d{1,14}$/, "Телефон введён неверно")
+    .phone("RU", "Телефон введён неверно")
     .required('Поле обязательно'),
 });
 

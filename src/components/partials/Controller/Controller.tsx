@@ -11,7 +11,7 @@ import { isString } from "lodash";
 interface Props extends Omit<ControllerProps, "render"> {
   // eslint-disable-next-line no-unused-vars
   getInput: (field: ControllerRenderProps<FieldValues>) => React.ReactNode;
-  label: string;
+  label?: string;
 }
 
 const Controller: React.FC<Props> = ({ label, name, control, getInput }) => {

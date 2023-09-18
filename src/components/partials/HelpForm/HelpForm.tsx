@@ -1,8 +1,8 @@
 import { Form } from "antd";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { Input, Button, Controller } from "@components/partials";
 import { Title } from "@components/typography";
-import { yupResolver } from "@hookform/resolvers/yup";
 import helpFormSchema from "./schema";
 
 interface HelpFormValues {
@@ -34,7 +34,7 @@ const HelpForm = () => {
       </Title>
       <Form onFinish={handleSubmit(onSubmit)} noValidate layout="vertical">
         <Controller
-          label=""
+          label="👤 Ваше имя"
           control={control as any}
           name="name"
           getInput={(field) => (
@@ -42,7 +42,7 @@ const HelpForm = () => {
           )}
         />
         <Controller
-          label=""
+          label="☎️ Ваш номер телефона"
           control={control as any}
           name="phone"
           getInput={(field) => (
