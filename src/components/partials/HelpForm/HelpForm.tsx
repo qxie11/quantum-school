@@ -1,4 +1,5 @@
 import { Form } from "antd";
+import cx from "classnames";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Input, Button, Controller } from "@components/partials";
@@ -10,7 +11,11 @@ interface HelpFormValues {
   phone: string;
 }
 
-const HelpForm = () => {
+type Props = {
+  className?: string;
+};
+
+const HelpForm = ({ className }: Props) => {
   const {
     control,
     handleSubmit,
@@ -28,7 +33,7 @@ const HelpForm = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 relative">
+    <div className={cx("flex flex-col gap-5 relative", className)}>
       <Title variant="h2" size="small" color="dark" className="text-center">
         Ты в одном шаге от профессии
       </Title>
