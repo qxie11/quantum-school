@@ -7,6 +7,16 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  @media (max-width: $md) {
+    font-size: 13px;
+  }
+
+  @media (max-width: $sm) {
+    font-size: 11px;
+  }
+}
+
 a,
 input,
 button,

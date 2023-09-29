@@ -35,7 +35,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          <div className="basis1/3">
+          <div className="basis1/3 w-full sm:w-auto">
             <div className="relative">
               <HelpForm className="z-[3] rounded-2xl p-12 bg-white shadow-md" />
               <BgGradient
