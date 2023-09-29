@@ -23,7 +23,7 @@ const Section: React.FC<Props> = ({
         "pb-24",
         {
           relative: gradient,
-          "bg-black": isDarkTheme,
+          "bg-darkTheme": isDarkTheme,
         },
         className
       )}

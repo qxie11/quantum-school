@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -18,7 +20,16 @@ module.exports = {
       md: "768px",
       lg: "992px",
     },
+    colors: {
+      primary: "#120a8f",
+      darkTheme: "#1e1f1d",
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+    },
   },
   plugins: [],
-  important: true,
 };

@@ -1,31 +1,10 @@
-// @import "normalize.css/normalize";
 @import "fonts-connect";
 @import "@styles/vars";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-}
-
-$base-font-size: 16px;
-
-html {
-  font-size: $base-font-size;
-
-  @media (max-width: $md) {
-    font-size: 13px;
-  }
-
-  @media (max-width: $sm) {
-    font-size: 11px;
-  }
 }
 
 a,
@@ -36,22 +15,4 @@ textarea {
   &:focus {
     outline: 2px solid $primary-color !important;
   }
-}
-
-ul {
-  list-style: none;
-}
-
-hr {
-  border: none;
-  min-height: 1px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
 }

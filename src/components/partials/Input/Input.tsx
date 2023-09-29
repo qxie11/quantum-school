@@ -8,7 +8,7 @@ interface Props extends InputProps {
 }
 
 const Input: React.FC<Props> = forwardRef(({ className, ...rest }) => {
-  return <AntdInput className={cx('rounded-3xl py-3', className)} {...rest} />;
+  return <AntdInput className={cx('!rounded-3xl !py-3', className)} {...rest} />;
 });
 
 export default Input;

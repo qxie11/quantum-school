@@ -45,7 +45,7 @@ const LoginModal: React.FC<Props> = ({ ...rest }) => {
         <Button
           htmlType="submit"
           disabled={!isValid}
-          className="w-full py-4 mt-8"
+          className="!w-full !py-4 mt-8"
         >
           <FiArrowRight className="w-[30px] h-[30px] mx-auto" />
         </Button>

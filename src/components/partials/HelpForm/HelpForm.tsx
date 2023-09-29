@@ -57,7 +57,7 @@ const HelpForm = ({ className }: Props) => {
         <Button
           htmlType="submit"
           disabled={!isValid}
-          className="w-full py-4 mt-3"
+          className="!w-full !py-4 mt-3"
         >
           Перезвоните мне
         </Button>

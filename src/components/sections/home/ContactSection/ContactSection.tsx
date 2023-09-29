@@ -39,7 +39,7 @@ const ContactSection = () => {
             <div className="relative">
               <HelpForm className="z-[3] rounded-2xl p-12 bg-white shadow-md" />
               <BgGradient
-                className="z-[1]"
+                className="!z-[1]"
                 width="200px"
                 height="200px"
                 color="#bcffc8"
@@ -48,7 +48,7 @@ const ContactSection = () => {
                 animation
               />
               <BgGradient
-                className="z-[1]"
+                className="!z-[1]"
                 width="150px"
                 height="150px"
                 color="#a8bfff"
