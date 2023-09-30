@@ -51,7 +51,7 @@ const HelpForm = ({ className }: Props) => {
           control={control as any}
           name="phone"
           getInput={(field) => (
-            <Input type="phone" placeholder="+7 800 555 35 35 " {...field} />
+            <Input type="phone" placeholder="Номер телефона" {...field} />
           )}
         />
         <Button
