@@ -26,7 +26,7 @@ const HeaderDesktop = () => {
       <Container>
         <div className="flex items-center justify-between gap-10">
           <Logo />
-          <Nav className="mr-auto" />
+          <Nav highlightActive className="mr-auto" />
           <ThemeSwitcher />
         </div>
       </Container>

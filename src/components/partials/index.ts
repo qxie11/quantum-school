@@ -12,3 +12,4 @@ export { default as Input } from "./Input/Input";
 export { default as Collapse } from "./Collapse/Collapse";
 export { default as HelpForm } from "./HelpForm/HelpForm";
 export { default as ImageWrapper } from "./ImageWrapper/ImageWrapper";
+export { default as Footer } from "./Footer/Footer";

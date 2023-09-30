@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { Header } from "@components/partials";
+import { Footer, Header } from "@components/partials";
 import { Layout } from "@components/layout";
 import {
   AdvantagesSection,
@@ -31,6 +31,7 @@ export default function Home({ courses }: Props) {
         <AdvantagesSection />
         <ContactSection />
       </main>
+      <Footer />
     </Layout>
   );
 }

@@ -5,12 +5,17 @@ import LogoMini from "./LogoMini";
 
 // https://looka.com - logo generator
 
-const Logo = () => {
+type Props = {
+  stableTheme?: "dark" | "light";
+  className?: string;
+};
+
+const Logo = (props: Props) => {
   const { isMD } = useMedia();
 
   return (
     <Link href="/">
-      {isMD ? <LogoFull /> : <LogoMini />}
+      {isMD ? <LogoFull {...props} /> : <LogoMini {...props} />}
     </Link>
   );
 };

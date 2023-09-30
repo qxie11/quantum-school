@@ -1,10 +1,18 @@
 import useTheme from "@hooks/useTheme";
+import { getIsDarkTheme } from "./utils";
 
-const LogoFull = () => {
-  const { isDarkTheme } = useTheme();
+type Props = {
+  stableTheme?: "dark" | "light";
+  className?: string;
+};
+
+const LogoFull = ({ stableTheme, className }: Props) => {
+  const { isDarkTheme: isDarkThemeVal } = useTheme();
+
+  const isDarkTheme = getIsDarkTheme(stableTheme, isDarkThemeVal);
 
   return (
-    <svg width="32" height="32" viewBox="0 0 57 57">
+    <svg className={className || ""} width="32" height="32" viewBox="0 0 57 57">
       <g
         transform="matrix(0.59,0,0,0.59,-3.3,-1)"
         fill={isDarkTheme ? "#fff" : "#120a8f"}

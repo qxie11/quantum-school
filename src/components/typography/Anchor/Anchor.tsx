@@ -12,6 +12,7 @@ interface Props extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   external?: boolean;
   className?: string;
   underlineAnimation?: boolean;
+  target?: "_blank";
   ref?: ForwardedRef<HTMLAnchorElement>;
 }
 

@@ -8,9 +8,14 @@ import styles from "./styles.module.scss";
 interface Props {
   className?: string;
   linksClassName?: string;
+  highlightActive?: boolean;
 }
 
-const Nav: React.FC<Props> = ({ className, linksClassName }) => {
+const Nav: React.FC<Props> = ({
+  className,
+  linksClassName,
+  highlightActive,
+}) => {
   const router = useRouter();
 
   return (
@@ -22,7 +27,7 @@ const Nav: React.FC<Props> = ({ className, linksClassName }) => {
             className={cx(
               styles.link,
               {
-                [styles.active]: isActive,
+                [styles.active]: isActive && highlightActive,
               },
               linksClassName
             )}
