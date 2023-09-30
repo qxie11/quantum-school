@@ -36,7 +36,7 @@ const LoginModal: React.FC<Props> = ({ ...rest }) => {
       <Form onFinish={handleSubmit(onSubmit)} noValidate layout="vertical">
         <Controller
           label="✉️ Ваш email"
-          control={control as any}
+          control={control}
           name="email"
           getInput={(field) => (
             <Input type="email" placeholder="frontdev@mail.com" {...field} />

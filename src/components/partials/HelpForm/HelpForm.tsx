@@ -40,7 +40,7 @@ const HelpForm = ({ className }: Props) => {
       <Form onFinish={handleSubmit(onSubmit)} noValidate layout="vertical">
         <Controller
           label="👤 Ваше имя"
-          control={control as any}
+          control={control}
           name="name"
           getInput={(field) => (
             <Input type="name" placeholder="Будущий Разработчик" {...field} />
@@ -48,7 +48,7 @@ const HelpForm = ({ className }: Props) => {
         />
         <Controller
           label="☎️ Ваш номер телефона"
-          control={control as any}
+          control={control}
           name="phone"
           getInput={(field) => (
             <Input type="phone" placeholder="Номер телефона" {...field} />
