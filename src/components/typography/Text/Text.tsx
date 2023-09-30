@@ -2,9 +2,6 @@ import { ForwardedRef, forwardRef, HTMLAttributes } from "react";
 import useTheme from "@hooks/useTheme";
 import cx from "classnames";
 
-// Styles
-import styles from "./styles.module.scss";
-
 interface Props extends HTMLAttributes<HTMLParagraphElement> {
   className?: string;
   ref?: ForwardedRef<HTMLParagraphElement>;
@@ -18,7 +15,7 @@ const Text: React.FC<Props> = forwardRef(
 
     return (
       <Tag
-        className={cx(styles.text, className, {
+        className={cx('mb-4', className, {
           "text-white": isDarkTheme,
         })}
         ref={ref}

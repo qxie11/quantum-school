@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import cx from "classnames";
 import { Container } from "@components/layout";
-import { Section, Tabs, Tags } from "@components/partials";
+import { ImageWrapper, Section, Tabs, Tags } from "@components/partials";
 import { Title } from "@components/typography";
 import CoursesApi from "@api/courses";
 import { filterCourses } from "./utils";
@@ -42,15 +42,15 @@ const CoursesSection = ({ courses }: Props) => {
         >
           👀
         </span>
-        <div className="overflow-hidden rounded-2xl h-[120px] w-[auto] sm:w-[140px] shadow-md">
+        <ImageWrapper className="h-[140px] w-[140px]">
           <Image
             src={`${process.env.BASE_URL}/${course.image}`}
-            layout="fixed"
-            width="120"
-            height="120"
+            className="h-full"
+            width="140"
+            height="140"
             alt={course.name}
           />
-        </div>
+        </ImageWrapper>
         <div className="w-full">
           <Tags tags={course?.tags} />{" "}
           <Title

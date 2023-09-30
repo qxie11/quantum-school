@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { Section, HelpForm, BgGradient } from "@components/partials";
+import {
+  Section,
+  HelpForm,
+  BgGradient,
+  ImageWrapper,
+} from "@components/partials";
 import { Container } from "@components/layout";
 import { Title, Text } from "@components/typography";
 import Images from "@assets/images";
@@ -11,9 +16,9 @@ const ContactSection = () => {
         <div className="flex justify-between items-center gap-6 flex-col lg:flex-row">
           <div className="basis-2/3">
             <div className="flex gap-8 flex-col items-center sm:items-start sm:flex-row">
-              <div className="rounded-2xl overflow-hidden w-[265px] shadow-2xl">
-                <Image className="h-full" src={Images.karina} alt="photo" />
-              </div>
+              <ImageWrapper className="w-[265px]">
+                <Image src={Images.karina} alt="photo" />
+              </ImageWrapper>
               <div>
                 <Title className="mb-8" size="medium" variant="h2">
                   Нужна помощь 🤝 в выборе курса?

@@ -25,7 +25,7 @@ module.exports = withPlugins(
           "@body-background": "#F9F9F9",
           "@font-family": "'Golos Text', Jost, Arial, Helvetica, sans-serif",
           "line-height-base": "1.25",
-          "@font-size-base": "16px",
+          "@font-size-base": "1rem",
           "@text-color": "#1e1f1d",
           "@link-color": "#1e1f1d",
         },
