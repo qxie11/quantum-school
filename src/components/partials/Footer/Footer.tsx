@@ -3,7 +3,7 @@ import { Logo, Nav } from "@components/partials";
 import { FaTelegramPlane } from "react-icons/fa";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";
 import { SlSocialVkontakte } from "react-icons/sl";
-import { Anchor, Title } from "@components/typography";
+import { Anchor, Title, Text } from "@components/typography";
 
 const Footer = () => {
   return (
@@ -68,10 +68,58 @@ const Footer = () => {
             <Title className="mb-8" variant="h3" size="small" color="light">
               Основное
             </Title>
-            <Nav />
+            <Nav
+              className="flex-col !items-start gap-2"
+              linksClassName="!text-gray-200"
+            />
           </div>
-          <div>1</div>
-          <div>1</div>
+          <div>
+            <Title className="mb-8 text-lg" variant="h3" color="light">
+              Подпииска на анонсы
+            </Title>
+            <Text>
+              Разреши нам присылать тебе уведомления о бесплатных событиях
+            </Text>
+            <Text className="text-gray-200">
+              Нажимая на эту кнопку я даю согласие на обработку своих{" "}
+              <Anchor
+                className="text-white  hover:text-white hover:underline"
+                href="https://google.com"
+                external
+                underlineAnimation={false}
+                target="_blank"
+                >
+                персональных данных
+              </Anchor>{" "}
+              и соглашаюсь с{" "}
+              <Anchor
+                className="text-white  hover:text-white hover:underline"
+                href="https://google.com"
+                external
+                underlineAnimation={false}
+                target="_blank"
+              >
+                договором оферты
+              </Anchor>
+            </Text>
+          </div>
+          <div>
+            <Anchor
+              className="text-white hover:text-white text-3xl mb-8 inline-block"
+              external
+              href="tel:+42012332123"
+            >
+              +420 12 33 21 23
+            </Anchor>
+            <br />
+            <Anchor
+              className="text-white hover:text-white inline-block"
+              external
+              href="mailto:mail@mail.com"
+            >
+              mail@mail.com
+            </Anchor>
+          </div>
         </div>
       </Container>
     </footer>

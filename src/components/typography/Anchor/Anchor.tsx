@@ -22,11 +22,16 @@ const Anchor: React.FC<Props> = React.forwardRef(
     ref
   ) => {
     const { isDarkTheme } = useTheme();
-    const classNames = cx(styles.link, className, {
-      [styles.underlineAnimation]: underlineAnimation,
-      "text-white": isDarkTheme,
-      "hover:text-white": isDarkTheme,
-    });
+    const classNames = cx(
+      "cursor-pointer font-medium transition",
+      styles.link,
+      {
+        [styles.underlineAnimation]: underlineAnimation,
+        "text-white": isDarkTheme,
+        "hover:text-white": isDarkTheme,
+      },
+      className,
+    );
 
     if (external) {
       return (
@@ -34,13 +39,13 @@ const Anchor: React.FC<Props> = React.forwardRef(
           {children}
         </a>
       );
-    } else {
-      return (
-        <Link className={classNames} ref={ref} href={href} {...rest}>
-          {children}
-        </Link>
-      );
     }
+
+    return (
+      <Link className={classNames} ref={ref} href={href} {...rest}>
+        {children}
+      </Link>
+    );
   }
 );
 

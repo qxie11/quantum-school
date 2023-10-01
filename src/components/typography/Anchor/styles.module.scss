@@ -1,15 +1,11 @@
 @import "@styles/vars";
 
 .link {
-  @apply cursor-pointer font-medium;
-  font-size: 16px;
-  transition: 0.3s ease;
-
   &.underlineAnimation {
     @apply relative;
 
     &:before {
-      @apply content-[""] w-0 h-[3px] absolute bottom-[-5px] left-0 right-0;
+      @apply content-[""] w-0 h-[2px] absolute bottom-[-5px] left-0 right-0;
       background: $primary-color;
       transition: width 0.4s;
     }

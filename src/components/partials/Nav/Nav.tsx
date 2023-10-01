@@ -31,7 +31,7 @@ const Nav: React.FC<Props> = ({
               },
               linksClassName
             )}
-            underlineAnimation={!isActive}
+            underlineAnimation={!isActive || !highlightActive}
             key={href}
             href={href}
           >
