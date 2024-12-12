@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const withAntdLess = require("next-plugin-antd-less");
-const withPlugins = require("next-compose-plugins");
 
 const nextConfig = {
   env: {
@@ -14,23 +12,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins(
-  [
-    [
-      withAntdLess,
-      {
-        modifyVars: {
-          "@primary-color": "#120a8f",
-          "@error-color": "#b91600",
-          "@body-background": "#F9F9F9",
-          "@font-family": "'Golos Text', Jost, Arial, Helvetica, sans-serif",
-          "line-height-base": "1.25",
-          "@font-size-base": "1rem",
-          "@text-color": "#1e1f1d",
-          "@link-color": "#1e1f1d",
-        },
-      },
-    ],
-  ],
-  nextConfig
-);
+module.exports = nextConfig;

@@ -1,8 +1,6 @@
+"use client";
 import cx from "classnames";
 import { ForwardedRef, forwardRef, HTMLAttributes } from "react";
-
-// Styles
-import styles from "./styles.module.scss";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   ref?: ForwardedRef<HTMLDivElement>;
@@ -11,7 +9,11 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const Container: React.FC<Props> = forwardRef(
   ({ children, className, ...rest }, ref) => (
-    <div className={cx(styles.container, className)} {...rest} ref={ref}>
+    <div
+      className={cx("max-w-[1400px] px-6 mx-auto", className)}
+      {...rest}
+      ref={ref}
+    >
       {children}
     </div>
   )

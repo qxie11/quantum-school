@@ -4,7 +4,6 @@ import cx from "classnames";
 import { Container } from "@components/layout";
 import { ImageWrapper, Section, Tabs, Tags } from "@components/partials";
 import { Title } from "@components/typography";
-import CoursesApi from "@api/courses";
 import { filterCourses } from "./utils";
 import IGetCoursesResponse from "@models/responses/IGetCoursesResponse";
 import useMedia from "@hooks/useMedia";
@@ -12,7 +11,7 @@ import useMedia from "@hooks/useMedia";
 import styles from "./styles.module.scss";
 
 interface Props {
-  courses: IGetCoursesResponse;
+  courses?: IGetCoursesResponse;
 }
 
 const CoursesSection = ({ courses }: Props) => {
@@ -21,7 +20,7 @@ const CoursesSection = ({ courses }: Props) => {
   const tabsItems = (courses ? ["Все", ...courses.tags] : []).map((tag) => ({
     label: tag,
     key: tag,
-    children: filterCourses(courses?.courses, tag).map((course) => (
+    children: filterCourses([], tag).map((course) => (
       <div
         className="mb-12 flex gap-12 relative flex-col sm:flex-row items-center sm:items-start"
         key={course.name}
@@ -83,20 +82,6 @@ const CoursesSection = ({ courses }: Props) => {
       </Container>
     </Section>
   );
-};
-
-CoursesSection.getServerSideProps = async () => {
-  try {
-    const courses = await CoursesApi.getCourses();
-
-    return {
-      props: { courses },
-    };
-  } catch {
-    return {
-      props: { courses: null },
-    };
-  }
 };
 
 export default CoursesSection;

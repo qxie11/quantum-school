@@ -16,19 +16,28 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@pages/*": ["./pages/*"],
       "@components/*": ["./components/*"],
       "@utils/*": ["./utils/*"],
       "@constants/*": ["./constants/*"],
       "@styles/*": ["./styles/*"],
-      "@store/*": ["./store/*"],
-      "@hooks/*": ["./hooks/*"],
-      "@models/*": ["./models/*"],
+      "@shared/*": ["./shared/*"],
+      "@store/*": ["./shared/store/*"],
+      "@entities/*": ["./entities/*"],
+      "@hooks/*": ["./shared/hooks/*"],
+      "@models/*": ["./entities/models/*"],
       "@enums/*": ["./enums/*"],
       "@api/*": ["./api/*"],
-      "@assets/*": ["./assets/*"]
-    }
+      "@assets/*": ["./shared/assets/*"],
+      "@pages/*": ["./page/*"],
+      "@widgets/*": ["./widgets/*"],
+      "@features/*": ["./features/*"],
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
