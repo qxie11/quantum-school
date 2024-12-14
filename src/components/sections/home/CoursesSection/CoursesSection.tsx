@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import cx from "classnames";
-import { Container } from "@components/layout";
+import { Container } from "@shared/ui";
 import { ImageWrapper, Section, Tabs, Tags } from "@components/partials";
 import { Title } from "@components/typography";
 import { filterCourses } from "./utils";

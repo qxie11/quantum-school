@@ -15,7 +15,7 @@ const Text: React.FC<Props> = forwardRef(
 
     return (
       <Tag
-        className={cx('mb-4', className, {
+        className={cx(className, {
           "text-white": isDarkTheme,
         })}
         ref={ref}

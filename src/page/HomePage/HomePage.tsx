@@ -3,23 +3,29 @@
 import { useState } from "react";
 import cx from "classnames";
 import { isFirefox } from "react-device-detect";
-import { Container } from "@components/layout";
+import { Button, Container } from "@shared/ui";
 import { Title, Text } from "@components/typography";
-import { Button, Section } from "@components/partials";
-import { LoginModal } from "@components/modal";
+import { Section } from "@components/partials";
+// import { LoginModal } from "@components/modal";
 import useTheme from "@hooks/useTheme";
-import useMedia from "@hooks/useMedia";
 import { GRADIENTS } from "./constants";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@shared/ui/Dialog/Dialog";
+import { Login } from "@features/index";
 
 const HomePage = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const { isLightTheme } = useTheme();
-  const { isXSM } = useMedia();
 
   return (
     <main>
       <Section
-        className={cx("py-36", {
+        className={cx("!py-36", {
           "[background:linear-gradient(133.63deg,#fff3b5_14.35%,#c5ff8b_87.65%)]":
             isFirefox && isLightTheme,
         })}
@@ -30,31 +36,35 @@ const HomePage = () => {
       >
         <Container>
           <Title size="large" className="mb-14">
-            Quantum School: Обучение web-разработке.
+            <span>Quantum School: Обучение web-разработке.</span>
             <br />
-            <span
-              className={cx("", {
-                "mt-[2rem]": isXSM,
-              })}
-            >
-              🎓 Учись.
+            <span className="max-sm:text-2xl">
+              🎓 Учись. 🖥️ Работай. 💸 Зарабатывай.
             </span>
-            <span className="">🖥️ Работай.</span>
-            <span className="">💸 Зарабатывай.</span>
           </Title>
           <div className="flex items-center gap-10 flex-wrap">
-            <Button onClick={() => setIsLoginModalOpen(true)}>🚀 Начать</Button>
-            <Text className="max-w-[10rem] mb-0">
+            <Dialog open={isLoginModalOpen} onOpenChange={setIsLoginModalOpen}>
+              <DialogContent aria-describedby={undefined}>
+                <DialogHeader>
+                  <DialogTitle>🔐 Войти или зарегистрироваться</DialogTitle>
+                </DialogHeader>
+                <Login />
+              </DialogContent>
+              <DialogTrigger asChild>
+                <Button size="large">🚀 Начать</Button>
+              </DialogTrigger>
+            </Dialog>
+            <Text className="max-w-[10rem]">
               Образовательная платформа твоего будущего
             </Text>
           </div>
         </Container>
-        {isLoginModalOpen && (
+        {/* {isLoginModalOpen && (
           <LoginModal
             open={isLoginModalOpen}
             onCancel={() => setIsLoginModalOpen(false)}
           />
-        )}
+        )} */}
       </Section>
     </main>
   );

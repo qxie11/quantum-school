@@ -1,4 +1,4 @@
-import { Container } from "@components/layout";
+import { Container } from "@shared/ui";
 import { Section, Collapse } from "@components/partials";
 import ICollapse from "@models/ICollapse";
 

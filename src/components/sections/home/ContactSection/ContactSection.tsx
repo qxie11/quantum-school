@@ -5,7 +5,7 @@ import {
   BgGradient,
   ImageWrapper,
 } from "@components/partials";
-import { Container } from "@components/layout";
+import { Container } from "@shared/ui";
 import { Title, Text } from "@components/typography";
 import Images from "@assets/images";
 

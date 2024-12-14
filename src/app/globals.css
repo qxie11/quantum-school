@@ -5,3 +5,17 @@
 body {
   @apply selection:bg-primary selection:text-white selection:bg-opacity-90;
 }
+
+@layer utilities {
+  @media (max-width: 768px) {
+    html {
+      font-size: 90%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    html {
+      font-size: 80%;
+    }
+  }
+}

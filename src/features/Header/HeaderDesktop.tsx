@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import cx from "classnames";
-import { Container } from "@components/layout";
+import { Container } from "@shared/ui";
 import useTheme from "@hooks/useTheme";
 import useScrollPosition from "@hooks/useScrollPosition";
 import { ThemeSwitcher, Nav, Logo } from "@widgets/index";

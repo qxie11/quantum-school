@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         className={cx(
-          "w-full rounded-lg border p-4 text-sm focus:outline-none focus:ring-2 transition-all",
+          "w-full rounded-lg border-4 border-primary px-4 py-3 text-lg focus:outline-none transition-all",
           {
             "border-gray-300 focus:ring-blue-500": !error,
             "border-red-500 focus:ring-red-500": error,
@@ -26,3 +26,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 );
 
 Input.displayName = "Input";
+
+export default Input;

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+const Breakpoints = require("./src/entities/enums/Breakpoints");
 
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -15,6 +16,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        xlg: `${Breakpoints.XLG}px`, // 1200px
+        lg: `${Breakpoints.LG}px`, // 992px
+        md: `${Breakpoints.MD}px`, // 768px
+        sm: `${Breakpoints.SM}px`, // 576px
+      },
     },
     colors: {
       primary: "#120a8f",
@@ -25,6 +32,7 @@ module.exports = {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      red: colors.red,
     },
   },
   plugins: [],

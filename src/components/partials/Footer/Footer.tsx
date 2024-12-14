@@ -1,4 +1,4 @@
-import { Container } from "@components/layout";
+import { Container } from "@shared/ui";
 import { Logo, Nav } from "@components/partials";
 import { FaTelegramPlane } from "react-icons/fa";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";

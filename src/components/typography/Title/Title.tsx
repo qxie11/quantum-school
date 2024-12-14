@@ -22,7 +22,7 @@ const Title: React.FC<Props> = forwardRef(
 
     return (
       <TagName
-        className={cx(styles.title, className, {
+        className={cx(styles.title, 'font-jost', className, {
           "text-white": color ? color === "light" : isDarkTheme,
           "text-5xl": size === "large",
           "text-4xl": size === "medium",

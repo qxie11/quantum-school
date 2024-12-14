@@ -22,17 +22,17 @@ const Section: React.FC<Props> = ({
       className={cx(
         "pb-24",
         {
-          relative: gradient,
+          "relative overflow-x-clip overflow-y-visible": gradient,
           "bg-darkTheme": isDarkTheme,
         },
         className
       )}
       {...rest}
     >
+      {children}
       {gradient?.map((item, i) => (
         <BgGradient key={i} {...item} />
       ))}
-      {children}
     </section>
   );
 };

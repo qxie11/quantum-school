@@ -1,7 +1,7 @@
 import { useState } from "react";
 import cx from "classnames";
 import { isFirefox } from "react-device-detect";
-import { Container } from "@components/layout";
+import { Container } from "@shared/ui";
 import { Title, Text } from "@components/typography";
 import { Button, Section } from "@components/partials";
 import { LoginModal } from "@components/modal";
