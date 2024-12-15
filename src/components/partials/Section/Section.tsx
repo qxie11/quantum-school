@@ -15,7 +15,7 @@ const Section: React.FC<Props> = ({
   gradient,
   ...rest
 }) => {
-  const { isDarkTheme } = useTheme();
+  const { isDarkTheme, isLightTheme } = useTheme();
 
   return (
     <section
@@ -30,9 +30,8 @@ const Section: React.FC<Props> = ({
       {...rest}
     >
       {children}
-      {gradient?.map((item, i) => (
-        <BgGradient key={i} {...item} />
-      ))}
+      {isLightTheme &&
+        gradient?.map((item, i) => <BgGradient key={i} {...item} />)}
     </section>
   );
 };

@@ -17,10 +17,24 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
-        xlg: `${Breakpoints.XLG}px`, // 1200px
-        lg: `${Breakpoints.LG}px`, // 992px
-        md: `${Breakpoints.MD}px`, // 768px
-        sm: `${Breakpoints.SM}px`, // 576px
+        xlg: `${Breakpoints.XLG}px`,
+        lg: `${Breakpoints.LG}px`,
+        md: `${Breakpoints.MD}px`,
+        sm: `${Breakpoints.SM}px`,
+      },
+      keyframes: {
+        slideDown: {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        slideUp: {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 200ms ease-out",
+        slideUp: "slideUp 200ms ease-out",
       },
     },
     colors: {
