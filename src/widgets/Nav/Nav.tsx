@@ -1,7 +1,7 @@
 "use client";
 import cx from "classnames";
 import { usePathname } from "next/navigation";
-import { Anchor } from "@components/typography";
+import { Anchor } from "@shared/ui";
 import { NAV_LINKS } from "./constants";
 
 import styles from "./styles.module.scss";

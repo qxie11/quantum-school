@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 import cx from "classnames";
 import useTheme from "@hooks/useTheme";
 import IBgGradient from "@models/IBgGradient";
-import { BgGradient } from "@components/partials";
+import { BgGradient } from "@shared/ui";
 
 interface Props extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -23,7 +23,7 @@ const Section: React.FC<Props> = ({
         "pb-24",
         {
           "relative overflow-x-clip overflow-y-visible": gradient,
-          "bg-darkTheme": isDarkTheme,
+          "!bg-darkTheme": isDarkTheme,
         },
         className
       )}

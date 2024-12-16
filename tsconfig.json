@@ -30,7 +30,7 @@
       "@assets/*": ["./shared/assets/*"],
       "@pages/*": ["./page/*"],
       "@widgets/*": ["./widgets/*"],
-      "@features/*": ["./features/*"],
+      "@features/*": ["./features/*"]
     },
     "plugins": [
       {

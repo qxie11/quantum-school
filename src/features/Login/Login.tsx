@@ -23,7 +23,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
       <FormField
         className="mb-4"
         label="✉️ Ваш email"
@@ -31,7 +31,6 @@ const Login = () => {
       >
         <Input
           placeholder="future_developer@mail.com"
-          id="email"
           type="email"
           error={!!errors.email}
           {...register("email")}

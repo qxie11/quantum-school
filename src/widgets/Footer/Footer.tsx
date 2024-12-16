@@ -1,9 +1,10 @@
-import { Container } from "@shared/ui";
-import { Logo, Nav } from "@components/partials";
+"use client";
+
 import { FaTelegramPlane } from "react-icons/fa";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";
 import { SlSocialVkontakte } from "react-icons/sl";
-import { Anchor, Title, Text } from "@components/typography";
+import { Container, Anchor, Text, Title } from "@shared/ui";
+import { Logo, Nav } from "@widgets/index";
 
 const Footer = () => {
   return (
@@ -88,7 +89,7 @@ const Footer = () => {
                 external
                 underlineAnimation={false}
                 target="_blank"
-                >
+              >
                 персональных данных
               </Anchor>{" "}
               и соглашаюсь с{" "}

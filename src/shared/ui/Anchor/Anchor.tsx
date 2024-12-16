@@ -3,9 +3,6 @@ import React, { ForwardedRef, HTMLAttributes } from "react";
 import cx from "classnames";
 import useTheme from "@hooks/useTheme";
 
-// Styles
-import styles from "./styles.module.scss";
-
 interface Props extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   href: string;
   light?: boolean;
@@ -13,24 +10,23 @@ interface Props extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   className?: string;
   underlineAnimation?: boolean;
   target?: "_blank";
-  ref?: ForwardedRef<HTMLAnchorElement>;
 }
 
-const Anchor: React.FC<Props> = React.forwardRef(
+const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
   (
     { children, className, external, underlineAnimation = true, href, ...rest },
-    ref
+    ref: ForwardedRef<HTMLAnchorElement>
   ) => {
     const { isDarkTheme } = useTheme();
+
     const classNames = cx(
-      "cursor-pointer font-medium transition",
-      styles.link,
+      "cursor-pointer font-medium transition relative",
       {
-        [styles.underlineAnimation]: underlineAnimation,
-        "text-white": isDarkTheme,
-        "hover:text-white": isDarkTheme,
+        "text-white hover:text-white": isDarkTheme,
+        "after:absolute after:bottom-[-5px] after:left-0 after:right-0 after:h-[2px] after:bg-primary after:transition-all after:duration-400 after:w-0 hover:after:w-full":
+          underlineAnimation,
       },
-      className,
+      className
     );
 
     if (external) {
@@ -42,11 +38,15 @@ const Anchor: React.FC<Props> = React.forwardRef(
     }
 
     return (
-      <Link className={classNames} ref={ref} href={href} {...rest}>
-        {children}
+      <Link href={href} passHref legacyBehavior>
+        <a className={classNames} ref={ref} {...rest}>
+          {children}
+        </a>
       </Link>
     );
   }
 );
+
+Anchor.displayName = "Anchor";
 
 export default Anchor;

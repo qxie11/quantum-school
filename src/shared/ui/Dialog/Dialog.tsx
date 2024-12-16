@@ -54,7 +54,7 @@ const DialogContent = React.forwardRef<
       <DialogPrimitive.Content
         ref={ref}
         className={cx(
-          "fixed left-1/2 top-1/2 z-50 w-full max-w-lg transform -translate-x-1/2 -translate-y-1/2",
+          "fixed left-1/2 top-1/2 z-50 w-full max-w-xl transform -translate-x-1/2 -translate-y-1/2",
           "bg-white rounded-2xl shadow-xl pt-12 p-6",
           // Not working anime
           `transition duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out 
@@ -70,9 +70,12 @@ const DialogContent = React.forwardRef<
         {isCloseBtn && (
           <DialogPrimitive.Close
             onClick={onCloseClick}
-            className="absolute right-4 top-4 text-gray-400 hover:text-gray-600 transition-colors"
+            className="absolute right-2 top-2 text-gray-400"
           >
-            <span aria-hidden="true">
+            <span
+              className="block p-2 rounded-full hover:bg-gray-200 transition"
+              aria-hidden="true"
+            >
               <FiX className="w-[30px] h-[30px]" />
             </span>
             <span className="sr-only">Close</span>

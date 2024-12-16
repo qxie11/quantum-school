@@ -16,7 +16,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles = `font-medium rounded-lg transition-all duration-150 focus:outline-none hover:shadow-[0px_1px_11px_5px_rgba(255,255,255,0.5)]
-    focus:shadow-[0px_1px_11px_5px_rgba(255,255,255,0.5)]`;
+    focus:shadow-[0px_1px_11px_5px_rgba(255,255,255,0.5)] disabled:bg-gray-400 disabled:cursor-no-drop`;
 
     const variantStyles = {
       primary:

@@ -5,8 +5,10 @@ const nextConfig = {
     BASE_URL: process.env.BASE_URL,
   },
   images: {
+    formats: ["image/webp"],
     domains: ["localhost"],
   },
+  compress: true,
   webpack(config) {
     return config;
   },

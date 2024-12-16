@@ -1,12 +1,15 @@
-import { Header } from "@features/index";
+import { Footer, Header } from "@widgets/index";
 import { HomePage } from "@pages/index";
 
 const Home = () => {
   return (
-    <main>
+    <>
       <Header />
-      <HomePage />
-    </main>
+      <main>
+        <HomePage />
+      </main>
+      <Footer />
+    </>
   );
 };
 

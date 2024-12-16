@@ -31,18 +31,29 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        bgGradientAnimation: {
+          from: {
+            transform: "rotate(0deg) scale(1.5)",
+          },
+          to: {
+            transform: "rotate(360deg) scale(1)",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 200ms ease-out",
         slideUp: "slideUp 200ms ease-out",
+        bgGradientAnimation: "bgGradientAnimation 6s infinite linear alternate",
       },
     },
     colors: {
       primary: "#120a8f",
       darkTheme: "#1e1f1d",
+      cornsilk: "#fff6d6",
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
+      green: colors.green,
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,

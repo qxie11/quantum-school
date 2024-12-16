@@ -2,18 +2,24 @@
 
 import cx from "classnames";
 import { isFirefox } from "react-device-detect";
+import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
   Container,
+  Title,
+  Text,
+  Section,
+  BgGradient,
+  ImageWrapper,
 } from "@shared/ui";
-import { Title, Text } from "@components/typography";
-import { Section } from "@components/partials";
 import useTheme from "@hooks/useTheme";
 import { LoginModal } from "@widgets/index";
 import { GRADIENTS } from "./constants";
+import Images from "@shared/assets/images";
+import { Contact } from "@features/index";
 
 const HomePage = () => {
   const { isLightTheme } = useTheme();
@@ -71,6 +77,66 @@ const HomePage = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </Container>
+      </Section>
+      <Section className="bg-cornsilk py-20 overflow-x-clip">
+        <Container>
+          <div className="flex justify-between items-center gap-6 flex-col lg:flex-row">
+            <div className="basis-2/3">
+              <div className="flex gap-8 flex-col items-center sm:items-start sm:flex-row">
+                <ImageWrapper className="w-[265px]">
+                  <Image
+                    src={Images.karina}
+                    alt="photo"
+                    quality={60}
+                    priority
+                  />
+                </ImageWrapper>
+                <div>
+                  <Title className="mb-8" size="medium" variant="h2">
+                    Нужна помощь 🤝 в выборе курса?
+                  </Title>
+                  <Text className="mb-4 font-bold">
+                    📝Заполни форму и мы свяжемся с тобой как можно скорее
+                  </Text>
+                  <Text className="mb-4 font-bold">
+                    Карина <br />
+                    <span className="text-sm font-normal">
+                      Карина Руководитель «Службы Заботы»
+                    </span>
+                  </Text>
+                  <Text className="text-lg max-w-xl">
+                    Консультация поможет выявить твои сильные стороны. Мы
+                    познакомимся и посоветуем, как правильно начать твою новую
+                    карьеру.
+                  </Text>
+                </div>
+              </div>
+            </div>
+            <div className="basis1/3 w-full sm:w-auto">
+              <div className="relative">
+                <Contact className="z-10" />
+                <BgGradient
+                  className="z-[1]"
+                  width="200px"
+                  height="200px"
+                  color="#bcffc8"
+                  left="0"
+                  top="0"
+                  animation
+                />
+                <BgGradient
+                  className="z-[1]"
+                  width="150px"
+                  height="150px"
+                  color="#a8bfff"
+                  left="50%"
+                  top="70%"
+                  animation
+                />
+              </div>
+            </div>
+          </div>
         </Container>
       </Section>
     </main>

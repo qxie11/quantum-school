@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, HTMLAttributes } from "react";
+import React, { forwardRef, HTMLAttributes } from "react";
 import cx from "classnames";
 import useTheme from "@hooks/useTheme";
 import styles from "./styles.module.scss";
@@ -7,12 +7,11 @@ interface Props extends HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
   className?: string;
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  ref?: ForwardedRef<HTMLHeadingElement>;
   size?: "large" | "medium" | "small";
   color?: "dark" | "light";
 }
 
-const Title: React.FC<Props> = forwardRef(
+const Title = forwardRef<HTMLHeadingElement, Props>(
   (
     { children, className, variant = "h1", size = "medium", color, ...rest },
     ref
@@ -22,7 +21,7 @@ const Title: React.FC<Props> = forwardRef(
 
     return (
       <TagName
-        className={cx(styles.title, 'font-jost', className, {
+        className={cx(styles.title, "font-jost", className, {
           "text-white": color ? color === "light" : isDarkTheme,
           "text-5xl": size === "large",
           "text-4xl": size === "medium",
@@ -36,5 +35,7 @@ const Title: React.FC<Props> = forwardRef(
     );
   }
 );
+
+Title.displayName = "Title";
 
 export default Title;
