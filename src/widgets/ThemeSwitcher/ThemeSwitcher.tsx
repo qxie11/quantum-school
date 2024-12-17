@@ -1,23 +1,22 @@
 "use client";
 import cx from "classnames";
 import useTheme from "@hooks/useTheme";
-import styles from "./styles.module.scss";
 
 interface Props {
   className?: string;
 }
 
 const ThemeSwitcher: React.FC<Props> = ({ className }) => {
-  const { isDarkTheme, switchTheme } = useTheme();
+  const { isLightTheme, switchTheme } = useTheme();
 
   return (
     <button
-      className={cx(styles.toggle_mode_btn, className)}
+      className={cx("p-2 rounded transform transition-transform duration-500 hover:rotate-45", className)}
       onClick={() => switchTheme()}
     >
-      {!isDarkTheme ? (
+      {isLightTheme ? (
         <svg
-          className={cx(styles.svg, styles.moon)}
+          className="w-7 h-7"
           viewBox="0 0 312.999 312.999"
         >
           <path
@@ -32,7 +31,7 @@ const ThemeSwitcher: React.FC<Props> = ({ className }) => {
         </svg>
       ) : (
         <svg
-          className={cx(styles.svg, styles.sun)}
+          className="w-7 h-7"
           fill="white"
           viewBox="0 0 302.4 302.4"
         >

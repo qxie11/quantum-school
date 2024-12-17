@@ -1,7 +1,6 @@
 import React, { forwardRef, HTMLAttributes } from "react";
 import cx from "classnames";
 import useTheme from "@hooks/useTheme";
-import styles from "./styles.module.scss";
 
 interface Props extends HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
@@ -21,7 +20,7 @@ const Title = forwardRef<HTMLHeadingElement, Props>(
 
     return (
       <TagName
-        className={cx(styles.title, "font-jost", className, {
+        className={cx("font-jost font-bold", className, {
           "text-white": color ? color === "light" : isDarkTheme,
           "text-5xl": size === "large",
           "text-4xl": size === "medium",
