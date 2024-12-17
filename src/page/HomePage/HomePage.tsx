@@ -40,7 +40,7 @@ const HomePage = () => {
           <Title size="large" className="mb-14">
             <span>Quantum School: Обучение web-разработке.</span>
             <br />
-            <span className="max-sm:text-2xl">
+            <span className="text-2xl sm:text-2xl">
               🎓 Учись. <br className="sm:hidden" /> 🖥️ Работай.{" "}
               <br className="sm:hidden" /> 💸 Зарабатывай.
             </span>
