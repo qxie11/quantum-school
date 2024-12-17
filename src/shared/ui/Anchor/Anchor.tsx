@@ -23,7 +23,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
       "cursor-pointer font-medium transition relative",
       {
         "text-white hover:text-white": isDarkTheme,
-        "after:absolute after:bottom-[-5px] after:left-0 after:right-0 after:h-[2px] after:bg-primary after:transition-all after:duration-400 after:w-0 hover:after:w-full":
+        "after:absolute after:bottom-[-5px] after:left-0 after:right-0 after:h-[3px] after:bg-primary after:transition-all after:duration-400 after:w-0 hover:after:w-full":
           underlineAnimation,
       },
       className

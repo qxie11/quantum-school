@@ -155,7 +155,10 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
             }
           }}
           value={inputValue}
-          onChange={handleInputChange}
+          onChange={(e) => {
+            handleInputChange(e);
+            props?.onChange?.(e);
+          }}
           onFocus={handleFocus}
           error={error}
           className={cx("rounded-l-none", className)}

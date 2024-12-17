@@ -41,7 +41,8 @@ const HomePage = () => {
             <span>Quantum School: Обучение web-разработке.</span>
             <br />
             <span className="max-sm:text-2xl">
-              🎓 Учись. 🖥️ Работай. 💸 Зарабатывай.
+              🎓 Учись. <br className="sm:hidden" /> 🖥️ Работай.{" "}
+              <br className="sm:hidden" /> 💸 Зарабатывай.
             </span>
           </Title>
           <div className="flex items-center gap-10 flex-wrap">
