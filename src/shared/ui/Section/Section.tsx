@@ -20,7 +20,7 @@ const Section: React.FC<Props> = ({
   return (
     <section
       className={cx(
-        "pb-24",
+        "pb-24 max-w-[1920px] mx-auto",
         {
           "relative overflow-x-clip overflow-y-visible": gradient,
           "!bg-darkTheme": isDarkTheme,

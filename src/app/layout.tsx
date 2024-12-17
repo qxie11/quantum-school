@@ -28,9 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${golosText.variable} ${jost.variable}`}>
       <body>
-        <div className="max-w-[2400px] mx-auto">
-          <ReduxProvider>{children}</ReduxProvider>
-        </div>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );
