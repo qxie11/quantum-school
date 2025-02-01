@@ -23,11 +23,11 @@ module.exports = {
         sm: `${Breakpoints.SM}px`,
       },
       keyframes: {
-        slideDown: {
+        "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
         },
-        slideUp: {
+        "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
@@ -41,8 +41,8 @@ module.exports = {
         },
       },
       animation: {
-        slideDown: "slideDown 200ms ease-out",
-        slideUp: "slideUp 200ms ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
         bgGradientAnimation: "bgGradientAnimation 6s infinite linear alternate",
       },
     },

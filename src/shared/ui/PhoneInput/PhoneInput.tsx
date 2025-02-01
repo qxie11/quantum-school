@@ -110,7 +110,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     };
 
     if (!selectedValue) {
-      return null; // или показать loading state
+      return null;
     }
 
     return (

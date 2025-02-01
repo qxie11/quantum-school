@@ -31,7 +31,8 @@ const AccordionTrigger = forwardRef<
       ref={ref}
       className={cx(
         "group flex w-full items-center justify-between px-4 py-7 text-left text-3xl font-medium font-jost",
-        "rounded-md transition-all duration-200 data-[state=open]:text-primary",
+        "rounded-md transition-colors duration-200 ease-in-out",
+        "data-[state=open]:text-primary hover:text-primary",
         className,
         {
           "text-white": isDarkTheme,
@@ -54,8 +55,8 @@ const AccordionContent = forwardRef<
     <AccordionPrimitive.Content
       ref={ref}
       className={cx(
-        "py-2 overflow-hidden text-lg text-gray-700 transition-all duration-200",
-        "data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp",
+        "overflow-hidden text-lg text-gray-700",
+        "data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up",
         className,
         {
           "text-white": isDarkTheme,
@@ -63,7 +64,9 @@ const AccordionContent = forwardRef<
       )}
       {...props}
     >
-      <div className="px-4 py-2">{children}</div>
+      <div className="p-4 transition-all duration-200 ease-in-out">
+        {children}
+      </div>
     </AccordionPrimitive.Content>
   );
 });
