@@ -17,16 +17,49 @@ interface PhoneInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
   ({ className, error, ...props }, ref) => {
     const [options, setOptions] = useState<ICountry[]>([]);
-    const [selectedValue, setSelectedValue] = useState<ICountry>({
-      code: "+380",
-      name: "Ukraine",
-      flag: "🇺🇦",
-    });
+    const [selectedValue, setSelectedValue] = useState<ICountry | null>(null);
     const [inputValue, setInputValue] = useState("");
     const [isOnceOpen, setIsOnceOpen] = useState(false);
     const inputRef = useRef<HTMLInputElement | null>(null);
 
-    const selectedCode = selectedValue.code;
+    useEffect(() => {
+      const detectUserCountry = async () => {
+        try {
+          const response = await fetch("https://ipapi.co/json/");
+          const data = await response.json();
+
+          const { countries } = await import("country-codes-flags-phone-codes");
+
+          const userCountry = countries.find(
+            (country) => country.code === data.country_code
+          );
+
+          if (userCountry) {
+            setSelectedValue({
+              code: userCountry.dialCode,
+              name: userCountry.name,
+              flag: userCountry.flag,
+            });
+          } else {
+            setSelectedValue({
+              code: "+380",
+              name: "Ukraine",
+              flag: "🇺🇦",
+            });
+          }
+        } catch (error) {
+          setSelectedValue({
+            code: "+380",
+            name: "Ukraine",
+            flag: "🇺🇦",
+          });
+        }
+      };
+
+      detectUserCountry();
+    }, []);
+
+    const selectedCode = selectedValue?.code || "+380";
 
     useEffect(() => {
       setInputValue(`${selectedCode} `);
@@ -76,6 +109,10 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
       }, 0);
     };
 
+    if (!selectedValue) {
+      return null; // или показать loading state
+    }
+
     return (
       <div className="relative grid grid-cols-[80px_1fr]">
         <SelectPrimitive.Root
@@ -105,7 +142,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           >
             <button className="relative">
               <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                {selectedValue?.flag}
+                {selectedValue.flag}
               </span>
               <span className="invisible text-[0px]">
                 <SelectPrimitive.Value />
