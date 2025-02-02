@@ -2,7 +2,6 @@
 
 import { FaTelegramPlane } from "react-icons/fa";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";
-import { SlSocialVkontakte } from "react-icons/sl";
 import { Container, Anchor, Text, Title } from "@shared/ui";
 import { Logo, Nav } from "@widgets/index";
 
@@ -41,18 +40,6 @@ const Footer = () => {
                   target="_blank"
                 >
                   <AiFillInstagram className="w-[23px] h-[23px]" fill="white" />
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-white"
-                  href="https://google.com"
-                  target="_blank"
-                >
-                  <SlSocialVkontakte
-                    className="w-[23px] h-[23px]"
-                    fill="white"
-                  />
                 </a>
               </li>
             </ul>
